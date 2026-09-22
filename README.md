@@ -1,4 +1,4 @@
-# Minimal Ansible project to demonstrate typical directory structure
+# Sandbox for playing with Ansible
 
 ```shell
 .
