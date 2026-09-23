@@ -1,0 +1,10 @@
+---
+- name: Basic z/OS Gather STCs
+  hosts: zos
+  gather_facts: false
+  environment: "{{ environment_vars }}"
+
+  tasks:
+    - name: Return all available z/OS STC facts
+      ibm.ibm_zos_core.zos_job_query:
+        job_class: "STC"
