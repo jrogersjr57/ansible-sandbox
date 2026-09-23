@@ -7,4 +7,10 @@
   tasks:
     - name: Return all available z/OS STC facts
       ibm.ibm_zos_core.zos_job_query:
-        job_class: STC
+      register: zos_facts
+
+    - name: Print return info from previous task
+      ansible.builtin.debug:
+        var: zos_stc
+        set_fact
+          started_tasks: >- {{ zos_stc}
