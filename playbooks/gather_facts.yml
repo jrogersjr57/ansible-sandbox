@@ -1,0 +1,14 @@
+---
+- name: Basic z/OS Gather Facts
+  hosts: zos
+  gather_facts: false
+  environment: "{{ environment_vars }}"
+
+  tasks:
+    - name: Return all available z/OS facts
+      ibm.ibm.zos_core.gather_facts:
+
+    - name: Response
+      debug:
+        msg: "{{ ansible_facts }}"
+        
