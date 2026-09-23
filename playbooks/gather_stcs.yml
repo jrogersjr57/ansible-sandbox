@@ -7,9 +7,9 @@
   tasks:
     - name: Return all available z/OS STC facts
       ibm.ibm_zos_core.zos_job_query:
-      register: zos_facts
+      register: zos_stcs
 
     - name: Print return info from previous task
       ansible.builtin.debug:
-        var: zos_stc
+        var: zos_stcs
 
