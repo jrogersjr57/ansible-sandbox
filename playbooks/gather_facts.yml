@@ -7,7 +7,3 @@
   tasks:
     - name: Return all available z/OS facts
       ibm.zos_core.gather_facts:
-
-    - name: Response
-      debug:
-        msg: "{{ ansible_facts }}"
