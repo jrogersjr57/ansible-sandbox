@@ -12,5 +12,5 @@
     - name: Print return info from previous task
       ansible.builtin.debug:
         var: zos_stc
-        set_fact
+        set_fact:
           started_tasks: >- {{ zos_stc}
