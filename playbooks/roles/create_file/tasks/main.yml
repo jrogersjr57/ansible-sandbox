@@ -7,4 +7,3 @@
     content: "Hello from Ansible\n"
     dest: /tmp/sample.txt
     mode: "0644"
-

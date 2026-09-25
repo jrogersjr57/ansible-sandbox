@@ -1,0 +1,21 @@
+# Run job from local
+- name: Hello World JCL job
+  hosts: zoslab
+  gather_facts: false
+  collections:
+    - ibm.ibm_zos_core
+  environment: "{{ environment_vars }}"
+
+  tasks:
+  - name: Submit Hello World job
+    zos_job_submit:
+      src: "{{ playbook_dir }}/JCL/hello_world.jcl"
+      location: LOCAL
+      encoding:
+        from: ISO8859-1
+        to: IBM-037
+    register: job_result
+
+  - name: Show job ID and return code
+    ansible.builtin.debug:
+      msg: "{{job_result.jobs[0].job_id }}"
